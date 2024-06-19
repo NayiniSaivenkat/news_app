@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
-const API_KEY = '8c50130aefff415c9b92028e185243c9';
+import dotenv from 'dotenv';
+dotenv.config();
+const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 const BASE_URL = 'https://newsapi.org/v2/top-headlines';
 
 export const fetchNews = createAsyncThunk(
